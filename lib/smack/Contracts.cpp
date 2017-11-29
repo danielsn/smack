@@ -17,7 +17,7 @@ Slice* ContractsExtractor::extractSlice(Value* V) {
   assert(I && "Expected instruction.");
 
   stringstream name;
-  name << "$expr" << uniqueSliceId++;
+  name << "__VERIFIER_invariant" << uniqueSliceId++;
   Slice* S = new Slice(*I, slices, name.str());
   if (Decl* D = (Decl*) S->getBoogieDecl(naming,rep))
     rep.getProgram().addDecl(D);
@@ -68,6 +68,8 @@ void ContractsExtractor::visitCallInst(CallInst& ci) {
     ci.eraseFromParent();
 
   } else if (name == "invariant") {
+    errs() << "is there any hope?\n";
+
     assert(ci.getNumArgOperands() == 1 && "Unexpected operands to invariant.");
 
     BasicBlock* body = ci.getParent();
