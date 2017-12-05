@@ -20,6 +20,7 @@
 #
 ################################################################################
 
+set +x 
 # Set these flags to control various installation options
 INSTALL_DEPENDENCIES=0
 BUILD_Z3=1
