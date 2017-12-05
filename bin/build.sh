@@ -21,7 +21,7 @@
 ################################################################################
 
 # Set these flags to control various installation options
-INSTALL_DEPENDENCIES=1
+INSTALL_DEPENDENCIES=0
 BUILD_Z3=1
 BUILD_BOOGIE=1
 BUILD_CORRAL=1
